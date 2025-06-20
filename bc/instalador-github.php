@@ -130,15 +130,41 @@ function downloadFromGitHub($filePath, $destinationPath) {
                 'User-Agent: BC-Sistema-Installer/1.0',
                 $GITHUB_CONFIG['token'] ? 'Authorization: token ' . $GITHUB_CONFIG['token'] : ''
             ],
-            'timeout' => 30
+            'timeout' => 60,
+            'ignore_errors' => true
         ]
     ]);
+    
+    // Tentar download com retry
+    $maxRetries = 3;
+    $content = false;
+    
+    for ($i = 0; $i < $maxRetries; $i++) {
+        $content = @file_get_contents($url, false, $context);
+        
+        if ($content !== false) {
+            break;
+        }
+        
+        if ($i < $maxRetries - 1) {
+            github_log("Tentativa " . ($i + 1) . " falhou, tentando novamente...");
+            sleep(2); // Aguardar 2 segundos antes de tentar novamente
+        }
+    }
     
     // Baixar arquivo
     $content = @file_get_contents($url, false, $context);
     
     if ($content === false) {
-        github_log("Erro ao baixar: $githubPath (URL: $url)");
+        $error = error_get_last();
+        $errorMsg = $error ? $error['message'] : 'Erro desconhecido';
+        github_log("Erro ao baixar: $githubPath (URL: $url) - $errorMsg");
+        return false;
+    }
+    
+    // Verificar se o conteúdo não está vazio
+    if (empty($content) || strlen($content) < 50) {
+        github_log("Arquivo vazio ou muito pequeno: $githubPath");
         return false;
     }
     
@@ -296,14 +322,18 @@ if ($isAjax && !empty($_POST['action'])) {
                 $errors = [];
                 
                 foreach ($filesToDownload as $githubPath => $localPath) {
-                    github_log("Tentando baixar: $githubPath");
+                    github_log("=== Processando arquivo: $githubPath ===");
+                    github_log("URL: {$GITHUB_RAW_URL}/{$GITHUB_CONFIG['subfolder']}/$githubPath");
+                    github_log("Destino: $localPath");
                     
                     if (downloadFromGitHub($githubPath, $localPath)) {
                         $downloaded++;
                         $results[] = ['status' => 'success', 'message' => basename($githubPath) . ' baixado ✅'];
+                        github_log("✅ Sucesso: " . basename($githubPath));
                     } else {
                         $errors[] = basename($githubPath);
                         $results[] = ['status' => 'error', 'message' => 'Erro: ' . basename($githubPath)];
+                        github_log("❌ Falha: " . basename($githubPath));
                     }
                 }
                 

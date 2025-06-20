@@ -33,6 +33,7 @@ $GITHUB_CONFIG = [
     'backup_before_update' => true,         // Sempre fazer backup
 ];
 
+
 // URLs base do GitHub
 $GITHUB_RAW_URL = "https://raw.githubusercontent.com/{$GITHUB_CONFIG['username']}/{$GITHUB_CONFIG['repository']}/{$GITHUB_CONFIG['branch']}";
 

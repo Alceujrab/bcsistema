@@ -1,0 +1,37 @@
+📤 INSTRUÇÕES DE UPLOAD PARA O SERVIDOR
+======================================
+
+1. ARQUIVOS PARA UPLOAD:
+   ✅ bc-sistema-deploy-20250617_230652.tar.gz
+   ✅ deploy-servidor-20250617_230652.sh
+
+2. MÉTODOS DE UPLOAD:
+
+   A) Via SCP (Linux/Mac):
+   scp bc-sistema-deploy-20250617_230652.tar.gz usuario@servidor.com:/home/usuario/
+   scp deploy-servidor-20250617_230652.sh usuario@servidor.com:/home/usuario/
+
+   B) Via FileZilla/WinSCP:
+   - Conecte-se ao seu servidor
+   - Navegue para /home/usuario/ (ou diretório home)
+   - Faça upload dos 2 arquivos
+
+   C) Via Painel de Controle:
+   - Acesse o gerenciador de arquivos
+   - Faça upload dos 2 arquivos
+
+3. EXECUTAR NO SERVIDOR:
+   ssh usuario@servidor.com
+   chmod +x deploy-servidor-20250617_230652.sh
+   ./deploy-servidor-20250617_230652.sh
+
+4. CONFIGURAR .env NO SERVIDOR:
+   - Editar as configurações de banco de dados
+   - Definir APP_URL com seu domínio
+   - Configurar email se necessário
+
+5. APONTAR DOMÍNIO:
+   - Configure DNS/Virtual Host para apontar para:
+   /home/usuario/public_html/sistema-financeiro/public/
+
+PRONTO! Seu sistema estará online! 🎉

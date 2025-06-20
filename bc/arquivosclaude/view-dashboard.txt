@@ -1,0 +1,152 @@
+@extends('layouts.app')
+
+@section('title', 'Dashboard - Sistema de Conciliação')
+
+@section('header', 'Dashboard')
+
+@section('content')
+<div class="row mb-4">
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Contas Ativas</h6>
+                        <h3 class="mb-0">{{ $stats['active_accounts'] }}</h3>
+                    </div>
+                    <i class="fas fa-university fa-2x text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Transações Pendentes</h6>
+                        <h3 class="mb-0">{{ $stats['pending_transactions'] }}</h3>
+                    </div>
+                    <i class="fas fa-clock fa-2x text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Conciliações do Mês</h6>
+                        <h3 class="mb-0">{{ $stats['month_reconciliations'] }}</h3>
+                    </div>
+                    <i class="fas fa-check-circle fa-2x text-success"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="card stat-card">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <h6 class="text-muted">Saldo Total</h6>
+                        <h3 class="mb-0">R$ {{ number_format($stats['total_balance'], 2, ',', '.') }}</h3>
+                    </div>
+                    <i class="fas fa-dollar-sign fa-2x text-info"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Últimas Transações</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Data</th>
+                                <th>Conta</th>
+                                <th>Descrição</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse($recentTransactions as $transaction)
+                            <tr>
+                                <td>{{ $transaction->transaction_date->format('d/m/Y') }}</td>
+                                <td>{{ $transaction->bankAccount->name }}</td>
+                                <td>{{ Str::limit($transaction->description, 40) }}</td>
+                                <td class="{{ $transaction->type == 'credit' ? 'text-success' : 'text-danger' }}">
+                                    {{ $transaction->formatted_amount }}
+                                </td>
+                                <td>
+                                    <span class="badge bg-{{ $transaction->status == 'reconciled' ? 'success' : 'warning' }}">
+                                        {{ $transaction->status == 'reconciled' ? 'Conciliado' : 'Pendente' }}
+                                    </span>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="5" class="text-center">Nenhuma transação encontrada</td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">Ações Rápidas</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-2">
+                    <a href="{{ route('imports.create') }}" class="btn btn-primary">
+                        <i class="fas fa-file-import me-2"></i> Importar Extrato
+                    </a>
+                    <a href="{{ route('reconciliations.create') }}" class="btn btn-success">
+                        <i class="fas fa-balance-scale me-2"></i> Nova Conciliação
+                    </a>
+                    <a href="{{ route('transactions.create') }}" class="btn btn-info">
+                        <i class="fas fa-plus me-2"></i> Adicionar Transação
+                    </a>
+                    <a href="{{ route('reports.index') }}" class="btn btn-secondary">
+                        <i class="fas fa-chart-bar me-2"></i> Ver Relatórios
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-3">
+            <div class="card-header">
+                <h5 class="mb-0">Alertas</h5>
+            </div>
+            <div class="card-body">
+                @if($alerts->count() > 0)
+                    @foreach($alerts as $alert)
+                    <div class="alert alert-{{ $alert->type }} py-2 mb-2">
+                        <small>{{ $alert->message }}</small>
+                    </div>
+                    @endforeach
+                @else
+                    <p class="text-muted mb-0">Nenhum alerta no momento.</p>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

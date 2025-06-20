@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos para botões de exportação de relatórios */
+.export-dropdown .dropdown-toggle::after {
+    border: none;
+    font-family: "Font Awesome 5 Free";
+    content: "\f019";
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.export-dropdown .dropdown-menu {
+    min-width: 120px;
+}
+
+.export-dropdown .dropdown-item {
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.export-dropdown .dropdown-item:hover {
+    background-color: #f8f9fa;
+    transform: translateX(5px);
+}
+
+.export-dropdown .dropdown-item i {
+    width: 20px;
+}
+
+/* Estilos para cards de relatórios */
+.report-card {
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.report-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+.report-card .card-footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+.report-card .btn-group .dropdown-toggle {
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Animações para botões de exportação */
+.export-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.export-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.export-btn:hover::before {
+    left: 100%;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .report-card .card-footer .d-flex {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .report-card .card-footer .btn-group {
+        width: 100%;
+    }
+    
+    .report-card .card-footer .dropdown-toggle {
+        border-left: none;
+        border-top: 1px solid rgba(255,255,255,0.2);
+    }
+}

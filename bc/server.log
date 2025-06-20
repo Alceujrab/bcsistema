@@ -1,0 +1,4 @@
+nohup: ignoring input
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+  Failed to listen on 0.0.0.0:8000 (reason: Address already in use)
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).

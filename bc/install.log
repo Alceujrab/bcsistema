@@ -1,0 +1,130 @@
+[2025-06-20 13:51:28] 🚀 INICIANDO INSTALAÇÃO - SISTEMA BC v2.0
+[2025-06-20 13:51:28] Data: 2025-06-20 13:51:28
+[2025-06-20 13:51:28] Diretório: /workspaces/bcsistema/bc
+[2025-06-20 13:51:28] 🔍 Verificando requisitos do sistema...
+[2025-06-20 13:51:28] ✅ Todos os requisitos atendidos
+[2025-06-20 13:51:28] 💾 Criando backups de segurança...
+[2025-06-20 13:51:28] Backup criado: StatementImportService.php
+[2025-06-20 13:51:28] Backup criado: ImportController.php
+[2025-06-20 13:51:28] Backup criado: create.blade.php
+[2025-06-20 13:51:28] 🔧 Atualizando StatementImportService...
+[2025-06-20 13:51:28] ✅ StatementImportService atualizado com sucesso
+[2025-06-20 13:51:28] 🔧 Atualizando ImportController...
+[2025-06-20 13:51:28] ✅ ImportController atualizado com sucesso
+[2025-06-20 13:51:28] 🎨 Criando CSS de importação...
+[2025-06-20 13:51:28] ✅ CSS de importação criado com sucesso
+[2025-06-20 13:51:28] 🖼️ Atualizando view de importação...
+[2025-06-20 13:51:28] ✅ View de importação atualizada com sucesso
+[2025-06-20 13:51:28] ⚡ Otimizando sistema...
+[2025-06-20 13:51:28] Comando: php artisan config:clear
+[2025-06-20 13:51:28] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Configuration cache cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 13:51:28] Comando: php artisan route:clear
+[2025-06-20 13:51:28] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Route cache cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 13:51:28] Comando: php artisan view:clear
+[2025-06-20 13:51:28] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Compiled views cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 13:51:28] Comando: php artisan config:cache
+[2025-06-20 13:51:28] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Configuration cached successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 13:51:28] Comando: php artisan route:cache
+[2025-06-20 13:51:28] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Routes cached successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 13:51:31] Comando: composer dump-autoload --optimize
+[2025-06-20 13:51:31] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+You made a reference to a non-existent script @/usr/local/bin/php artisan package:discover --ansi
+Generated optimized autoload files containing 4698 classes
+
+[2025-06-20 13:51:31] ✅ Sistema otimizado com sucesso
+[2025-06-20 13:51:31] 🧪 Executando testes de validação...
+[2025-06-20 13:51:31] ✅ Testes de validação concluídos
+[2025-06-20 14:16:11] 🚀 INICIANDO INSTALAÇÃO - SISTEMA BC v2.0
+[2025-06-20 14:16:11] Data: 2025-06-20 14:16:11
+[2025-06-20 14:16:11] Diretório: /workspaces/bcsistema/bc
+[2025-06-20 14:16:11] 🔍 Verificando requisitos do sistema...
+[2025-06-20 14:16:11] ✅ Todos os requisitos atendidos
+[2025-06-20 14:16:11] 💾 Criando backups de segurança...
+[2025-06-20 14:16:11] Backup criado: StatementImportService.php
+[2025-06-20 14:16:11] Backup criado: ImportController.php
+[2025-06-20 14:16:11] Backup criado: create.blade.php
+[2025-06-20 14:16:11] 🔧 Atualizando StatementImportService...
+[2025-06-20 14:16:11] ✅ StatementImportService atualizado com sucesso
+[2025-06-20 14:16:11] 🔧 Atualizando ImportController...
+[2025-06-20 14:16:11] ✅ ImportController atualizado com sucesso
+[2025-06-20 14:16:11] 🎨 Criando CSS de importação...
+[2025-06-20 14:16:11] ✅ CSS de importação criado com sucesso
+[2025-06-20 14:16:11] 🖼️ Atualizando view de importação...
+[2025-06-20 14:16:11] ✅ View de importação atualizada com sucesso
+[2025-06-20 14:16:11] ⚡ Otimizando sistema...
+[2025-06-20 14:16:11] Comando: php artisan config:clear
+[2025-06-20 14:16:11] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Configuration cache cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 14:16:11] Comando: php artisan route:clear
+[2025-06-20 14:16:11] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Route cache cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 14:16:12] Comando: php artisan view:clear
+[2025-06-20 14:16:12] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Compiled views cleared successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 14:16:12] Comando: php artisan config:cache
+[2025-06-20 14:16:12] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Configuration cached successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 14:16:12] Comando: php artisan route:cache
+[2025-06-20 14:16:12] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+   INFO  Routes cached successfully.  
+
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+
+[2025-06-20 14:16:15] Comando: composer dump-autoload --optimize
+[2025-06-20 14:16:15] Output: Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9003 (through xdebug.client_host/xdebug.client_port).
+Generating optimized autoload files
+> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+You made a reference to a non-existent script @/usr/local/bin/php artisan package:discover --ansi
+Generated optimized autoload files containing 4698 classes
+
+[2025-06-20 14:16:15] ✅ Sistema otimizado com sucesso
+[2025-06-20 14:16:15] 🧪 Executando testes de validação...
+[2025-06-20 14:16:15] ✅ Testes de validação concluídos
